@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MVVM1"
+             xmlns:vm="clr-namespace:MVVM1.ViewModel"
+             x:Class="MVVM1.MainPage">
+    <ContentPage.BindingContext>
+        <vm:PersonViewModel />
+    </ContentPage.BindingContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackLayout Padding="20,0,0,0"  HorizontalOptions="CenterAndExpand" >
+            <Label x:Name="FirstName" Text="{Binding Person.Fname}">
+            </Label>
+            <Entry Grid.Column="1"
+                               Grid.Row="0"
+                               Text="{Binding Person.Fname}"
+                               TextColor="{StaticResource SecondaryBlue}"
+                               FontFamily="{StaticResource FuturaStdMedium}"/>
+            <Label x:Name ="LastName" Text="{Binding Person.Lname}">
+            </Label>
+            <Entry Grid.Column="1"
+                               Grid.Row="0"
+                               Text="{Binding Person.Lname}"
+                               TextColor="{StaticResource SecondaryBlue}"
+                               FontFamily="{StaticResource FuturaStdMedium}"/>
+            <Label x:Name="FullName" Text="{Binding Person.Fullname}">
+            </Label>
+            <Entry Grid.Column="1"
+                               Grid.Row="0"
+                               Text="{Binding Person.Fullname}"
+                               TextColor="{StaticResource SecondaryBlue}"
+                               FontFamily="{StaticResource FuturaStdMedium}"/>
+            
+        </StackLayout>
+
+
+
+
+
+
+        <Button x:Name="submit" HorizontalOptions="Center" Grid.Row="2" Grid.Column="0"/>
+
+        <ListView x:Name="Fname"
+            ItemsSource="{Binding Person}">
+            
+                
+            
+        </ListView>
+        <ListView x:Name="Lname"
+            ItemsSource="{Binding Person}">
+
+
+
+        </ListView>
+        <ListView x:Name="Fullname"
+            ItemsSource="{Binding Person}">
+
+
+
+        </ListView>
+       
+
+    </Grid>
+
+</ContentPage>
